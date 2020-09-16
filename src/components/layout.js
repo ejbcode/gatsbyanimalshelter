@@ -1,51 +1,60 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
-import "./layout.css"
+import Helmet from "react-helmet"
+import { Global, css } from "@emotion/core"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const layout = ({ children }) => {
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <Global
+        styles={css`
+          :root {
+            --white: #fff;
+          }
+          html {
+            font-size: 62.5%;
+          }
+          body {
+            font-size: 16px;
+            font-size: 1.6rem;
+            line-height: 1.5;
+            background: var(--bg);
+          }
+
+          h1,
+          h2,
+          h3 {
+            margin: 0;
+            line-height: 1.5;
+          }
+          h1,
+          h2 {
+            font-family: "Roboto", sarif;
+          }
+          ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+        `}
+      />
+      <Helmet>
+        <title>Gatsby hotel demo</title>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
+      <Header />
+      {children}
     </>
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+export default layout
