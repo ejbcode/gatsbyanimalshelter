@@ -1,9 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
+import ImageHero from "../components/ImageHero"
 
 const IndexPage = () => (
   <Layout>
-    <h1>Index</h1>
+    <ImageHero />
   </Layout>
 )
 
