@@ -14,26 +14,28 @@ const layout = ({ children }) => {
           * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
           }
           html {
             font-size: 62.5%;
           }
           body {
+            font-family: "Roboto", sarif;
             font-size: 16px;
             font-size: 1.6rem;
             line-height: 1.5;
             background: var(--bg);
+            max-width: 1200px;
+            margin: 0 auto;
           }
 
           h1,
           h2,
           h3 {
             margin: 0;
-            line-height: 1.5;
           }
           h1,
           h2 {
-            font-family: "Roboto", sarif;
           }
           ul {
             list-style: none;
@@ -50,6 +52,7 @@ const layout = ({ children }) => {
           integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
           crossorigin="anonymous"
         /> */}
+
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
           rel="stylesheet"

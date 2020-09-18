@@ -12,16 +12,15 @@ const NavStyled = styled.nav`
 `
 
 const NavLink = styled(Link)`
-  color: var(--white);
+  color: rebeccapurple;
   font-size: 1.6rem;
   font-weight: 700;
-  line-height: 1rem;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   padding: 1rem;
-  margin-right: 1rem;
+  padding-bottom: 0;
+  margin: 0;
   &:last-of-type {
-    margin-right: 0;
   }
   &.active {
     border-bottom: 2px solid var(--white);

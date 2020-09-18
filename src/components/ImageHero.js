@@ -11,21 +11,36 @@ const TextArea = styled.div`
   display: flex;
   height: 100%;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  padding: 0 1rem;
+  width: 60%;
+
   /* background-image: linear-gradient(
     to top,
     rgba(34, 49, 63, 0.9),
     rgba(34, 49, 63, 0.75)
   ); */
-
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+    color: royalblue;
+    span {
+      font-size: 4rem;
+
+      color: rebeccapurple;
+    }
+    @media (min-width: 768px) {
+      font-size: 4;
+      span {
+        font-size: 5.5rem;
+      }
+    }
   }
 
   p {
-    font-size: 4rem;
+    font-size: 2rem;
+    color: royalblue;
   }
 `
 
@@ -51,12 +66,10 @@ const ImageHero = () => {
     >
       <TextArea>
         <h1>
-          Because <br />
-          everybody <br />
-          deserves
-          <br /> a Home
+          <span> Adopt,</span> <br />
+          Don’t Shop <br />
         </h1>
-        <p> Adopt, Don’t Shop</p>
+        <p> Helping our animal friends one paw at a time.</p>
       </TextArea>
     </ImageBackground>
   )

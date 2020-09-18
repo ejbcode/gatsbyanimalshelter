@@ -10,6 +10,8 @@ const Header = () => {
         position: absolute;
         width: 100%;
         z-index: 2;
+        right: 0;
+        left: 0;
       `}
     >
       <div
@@ -18,18 +20,19 @@ const Header = () => {
           margin: 0 auto;
           display: flex;
           justify-content: space-between;
-          border: solid red 2px;
           @media (min-width: 768px) {
+            margin: 0 3rem;
           }
         `}
       >
         <h1
           css={css`
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             margin-left: 1rem;
+            color: royalblue;
           `}
         >
-          Logo
+          Paws
         </h1>
         <Nav />
       </div>
