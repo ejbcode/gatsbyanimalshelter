@@ -17,9 +17,10 @@ const layout = ({ children }) => {
             box-sizing: border-box;
           }
           html {
+            box-sizing: border-box;
             font-size: 62.5%;
           }
-          body {
+          * body {
             font-family: "Roboto", sarif;
             font-size: 16px;
             font-size: 1.6rem;

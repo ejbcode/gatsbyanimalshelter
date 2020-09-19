@@ -56,7 +56,6 @@ const ImageHero = () => {
       }
     }
   `)
-  console.log(data.file.childImageSharp.fluid)
 
   return (
     <ImageBackground

@@ -1,6 +1,7 @@
 import React from "react"
-import Image from "gatsby-image"
 import styled from "@emotion/styled"
+import Image from "gatsby-image"
+
 import { css } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -21,10 +22,10 @@ const TextBox = styled.div`
   }
 `
 
-const HomeContent = () => {
+const AboutContent = () => {
   const data = useStaticQuery(graphql`
     {
-      allDatoCmsPage(filter: { slug: { eq: "home" } }) {
+      allDatoCmsPage(filter: { slug: { eq: "about" } }) {
         nodes {
           title
           content
@@ -57,4 +58,4 @@ const HomeContent = () => {
   )
 }
 
-export default HomeContent
+export default AboutContent
