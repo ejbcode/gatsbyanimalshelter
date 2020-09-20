@@ -19,7 +19,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   dogData.forEach(dog => {
     actions.createPage({
       path: dog.slug,
-      component: require.resolve(`./src/components/dog.js`),
+      component: require.resolve(`./src/components/DogTemplate.js`),
       context: { slug: dog.slug },
     })
   })

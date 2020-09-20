@@ -1,8 +1,8 @@
 import React from "react"
 import { css } from "@emotion/core"
-import Nav from "./nav"
 
-const Header = () => {
+const Footer = ({ siteName }) => {
+  const year = new Date().getFullYear()
   return (
     <header
       css={css`
@@ -25,19 +25,18 @@ const Header = () => {
           }
         `}
       >
-        <h1
+        <h4
           css={css`
-            font-size: 3.5rem;
+            font-size: 1.5rem;
             margin-left: 1rem;
             color: royalblue;
           `}
         >
-          Paws
-        </h1>
-        <Nav />
+          {siteName} {year}
+        </h4>
       </div>
     </header>
   )
 }
 
-export default Header
+export default Footer
