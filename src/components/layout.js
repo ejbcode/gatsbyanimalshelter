@@ -43,7 +43,6 @@ const Layout = ({ children }) => {
             font-size: 1.6rem;
             line-height: 1.5;
             background: var(--bg);
-            max-width: 1200px;
             margin: 0 auto;
           }
 
