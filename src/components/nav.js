@@ -5,6 +5,7 @@ import styled from "@emotion/styled"
 const NavStyled = styled.nav`
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-bottom: 1rem;
   @media (min-width: 768px) {
     padding-bottom: 0;

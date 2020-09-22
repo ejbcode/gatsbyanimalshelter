@@ -5,40 +5,30 @@ import styled from "@emotion/styled"
 
 const Hero = styled.div`
   background: #16d8db;
-  background-image: url("http://demo.highhay.com/landeux/img/bg-layer.png"),
-    url("http://demo.highhay.com/landeux/img/bg-wave.png");
+  background-image: url("http://demo.highhay.com/landeux/img/bg-layer.png");
   background-repeat: no-repeat;
-  background-position: center center, center bottom;
-  background-size: cover, contain;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
 
   .container {
+    margin: 0 auto;
     max-width: 1200px;
-
-    flex: wrap;
-
-    margin-right: auto;
-    margin-left: auto;
-    align-items: center;
     display: flex;
+    flex: wrap;
+    align-items: center;
     flex-direction: column;
   }
-
-  .imagearea {
-    border: green solid 3px;
-    line-height: 1.74;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    visibility: visible;
-    font-family: "CerebriSans";
-    color: #696969;
-    box-sizing: border-box;
-    position: relative;
+  .wave {
+    bottom: 0;
+    position: absolute;
     width: 100%;
-
-    flex: 0 0 1;
-    max-width: 100%;
-    margin: 0 auto;
+    height: 30%;
+    z-index: 5;
+    background-image: url("http://demo.highhay.com/landeux/img/bg-wave.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% 50%;
   }
 
   @media (min-width: 768px) {
@@ -49,12 +39,12 @@ const Hero = styled.div`
 `
 
 const TextArea = styled.div`
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   text-align: center;
   h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    line-height: 4.5rem;
+    line-height: 1.2;
     color: whitesmoke;
     span {
       color: palevioletred;
@@ -64,18 +54,42 @@ const TextArea = styled.div`
     font-size: 2rem;
     color: #333;
   }
+  a {
+    margin-bottom: 1rem;
+    display: inline-block;
+    border: 1px solid whitesmoke;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: palevioletred;
+    font-size: 2rem;
+    transition: 0.3s;
+  }
+  a:hover {
+    background-color: palevioletred;
+    color: whitesmoke;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 5.5rem;
+    }
+    p {
+      font-size: 3rem;
+    }
+  }
 `
 
 const ImageArea = styled.div`
   position: relative;
 
-  border: black solid 1px;
-
   .div1 {
     position: absolute;
     top: 10px;
+    bottom: 0;
+    right: 0;
+    left: 0;
     margin: 0 auto;
-    border: dashed 2px violet;
     margin: 0 auto;
 
     img {
@@ -88,8 +102,6 @@ const ImageArea = styled.div`
     position: relative;
 
     img {
-      margin: 0 auto;
-      border: dashed 2px yellow;
       max-width: 100%;
       height: auto;
     }
@@ -121,10 +133,11 @@ const ImageHero = () => {
       <div className="container">
         <TextArea>
           <div>
+            <p>Someone is waiting to start their life with you</p>
             <h1>
-              Do you want to get a <span> best Friend?</span>
+              Do you want to mett your <span> best Friend</span>?
             </h1>
-            <p>Adopt!, don't Shop</p>
+            <a href="#">Know more</a>
           </div>
         </TextArea>
         <ImageArea>
@@ -143,7 +156,8 @@ const ImageHero = () => {
             />
           </div>
         </ImageArea>
-      </div>
+      </div>{" "}
+      <div className="wave"> </div>
     </Hero>
   )
 }
