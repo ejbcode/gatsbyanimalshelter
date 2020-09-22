@@ -4,7 +4,7 @@ import Image from "gatsby-image"
 import styled from "@emotion/styled"
 
 const Hero = styled.div`
-  background: #16d8db;
+  background: var(--primary);
   background-image: url("http://demo.highhay.com/landeux/img/bg-layer.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -20,7 +20,7 @@ const Hero = styled.div`
     flex-direction: column;
   }
   .wave {
-    bottom: 0;
+    bottom: -1px;
     position: absolute;
     width: 100%;
     height: 30%;
@@ -60,9 +60,7 @@ const TextArea = styled.div`
     border: 1px solid whitesmoke;
     margin-top: 1rem;
     padding: 0.5rem;
-    text-decoration: none;
-    color: palevioletred;
-    font-size: 2rem;
+
     transition: 0.3s;
   }
   a:hover {
@@ -135,7 +133,7 @@ const ImageHero = () => {
           <div>
             <p>Someone is waiting to start their life with you</p>
             <h1>
-              Do you want to mett your <span> best Friend</span>?
+              Do you want to met your <span> best Friend</span>?
             </h1>
             <a href="#">Know more</a>
           </div>

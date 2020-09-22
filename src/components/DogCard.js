@@ -3,6 +3,19 @@ import Image from "gatsby-image"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
+// https://codepen.io/mcraiganthony/pen/NxGxqm?editors=1100
+const Card = styled.div`
+  max-height: 24rem;
+  min-width: 250px;
+  width: 33%;
+  margin: 0 auto;
+`
+const ImageStyled = styled(Image)`
+  border: green dashed 2px;
+  object-fit: cover;
+  width: auto;
+  height: 23rem;
+`
 
 const Button = styled(Link)`
   margin-top: 2rem;
@@ -18,18 +31,21 @@ const Button = styled(Link)`
 `
 
 const DogCard = ({ dog }) => {
-  const { slug, content, title, image } = dog
+  const { slug, content, name, image, breed, gender } = dog
   return (
-    <div
+    <Card
       css={css`
         border: 1px solid #e1e1e1;
+        border: red 1px solid;
+
         margin-bottom: 1rem;
       `}
     >
-      <Image fluid={image.fluid} alt={title} />
+      <ImageStyled fluid={image.fluid} alt={name} />
       <div
         css={css`
           padding: 3rem;
+          border: red 1px solid;
         `}
       >
         <h3
@@ -37,12 +53,13 @@ const DogCard = ({ dog }) => {
             font-size: 3rem;
           `}
         >
-          {title}
+          {name}
         </h3>
-        <p>{content}</p>
+        <h2>{breed}</h2>
+        <h2>{gender}</h2>
         <Button to={slug}> know more </Button>
       </div>
-    </div>
+    </Card>
   )
 }
 

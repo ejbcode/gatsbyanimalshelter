@@ -26,7 +26,9 @@ const Layout = ({ children }) => {
       <Global
         styles={css`
           :root {
-            --white: #fff;
+            --white: #eee;
+            --primary: #16d8db;
+            --black: #334;
           }
           * {
             margin: 0;
@@ -44,6 +46,7 @@ const Layout = ({ children }) => {
             line-height: 1.5;
             background: var(--bg);
             margin: 0 auto;
+            color: var(--black);
           }
 
           h1,
@@ -58,6 +61,11 @@ const Layout = ({ children }) => {
             list-style: none;
             margin: 0;
             padding: 0;
+          }
+          a {
+            text-decoration: none;
+            color: palevioletred;
+            font-size: 2rem;
           }
         `}
       />

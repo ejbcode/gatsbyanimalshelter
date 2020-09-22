@@ -19,7 +19,10 @@ export const query = graphql`
     allDatoCmsDog(filter: { slug: { eq: $slug } }) {
       nodes {
         slug
-        title
+        name
+        breed
+        gender
+        age
         content
         image {
           fluid(maxHeight: 1200) {
@@ -33,12 +36,16 @@ export const query = graphql`
 
 const DogTemplate = props => {
   const dog = props.data.allDatoCmsDog.nodes[0]
-  console.log(dog)
   return (
     <Layout>
       <MainStyled>
-        <h1>{dog.title}</h1>
+        <h1>{dog.name}</h1>
         <Image fluid={dog.image.fluid} />
+        <h2>{dog.gender}</h2>
+        <h2>{dog.age}</h2>
+
+        <h2>{dog.breed}</h2>
+
         <p>{dog.content}</p>
       </MainStyled>
     </Layout>
