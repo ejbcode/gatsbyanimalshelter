@@ -1,41 +1,46 @@
 import React from "react"
+import Social from "./Social"
 import { css } from "@emotion/core"
 
 const Footer = ({ siteName }) => {
   const year = new Date().getFullYear()
   return (
-    <header
+    <footer
       css={css`
-        background: transparent;
-        /* position: absolute; */
         width: 100%;
-        z-index: 2;
-        right: 0;
-        left: 0;
+        background: royalblue;
       `}
     >
       <div
         css={css`
           max-width: 1200px;
           margin: 0 auto;
-          display: flex;
-          justify-content: space-between;
-          @media (min-width: 768px) {
-            margin: 0 3rem;
-          }
         `}
       >
+        <Social />
         <h4
           css={css`
+            color: var(--white);
             font-size: 1.5rem;
-            margin-left: 1rem;
-            color: royalblue;
+            text-align: center;
+            display: block;
+
+            span {
+              color: orange;
+            }
           `}
         >
-          {siteName} {year}
+          © Copyright - {siteName} - {year} <br /> Designed with 💙 by{" "}
+          <a
+            href="http://github.com/ejbcode"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>ejbcode</span>
+          </a>
         </h4>
       </div>
-    </header>
+    </footer>
   )
 }
 
