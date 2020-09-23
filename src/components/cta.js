@@ -4,13 +4,14 @@ import styled from "@emotion/styled"
 const CtaStyled = styled.div`
   background: var(--primary);
   background-image: url("https://www.dogstrust.org.uk/_home/news/111270bg_repeat_bone_trans_10.png");
-  height: 450px;
+  height: auto;
   position: relative;
   text-align: center;
-
+  border: 0;
+  overflow: hidden;
   h2 {
-    padding: 4rem 0 1rem 0;
-    font-size: 4rem;
+    padding: 1rem 0 1rem 0;
+    font-size: 3rem;
     color: whitesmoke;
   }
   p {
@@ -23,9 +24,10 @@ const CtaStyled = styled.div`
     display: inline-block;
     color: var(--white);
     background-color: palevioletred;
-    margin: 5rem;
+    margin: 2rem;
     border: solid 1px var(--white);
     padding: 0.5rem 2rem;
+    margin-bottom: 220px;
   }
 
   .line {
@@ -41,6 +43,14 @@ const CtaStyled = styled.div`
   .container {
     max-width: 1200px;
     margin: 40px auto;
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      padding: 4rem 0 1rem 0;
+      font-size: 4rem;
+      color: whitesmoke;
+    }
   }
 `
 

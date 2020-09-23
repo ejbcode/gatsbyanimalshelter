@@ -64,7 +64,7 @@ const Layout = ({ children }) => {
           }
           a {
             text-decoration: none;
-            color: palevioletred;
+            color: var(--black);
             font-size: 2rem;
           }
         `}

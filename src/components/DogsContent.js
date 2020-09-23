@@ -6,20 +6,16 @@ import { css } from "@emotion/core"
 
 const Container = styled.div`
   max-width: 1200px;
+
   margin: 0 auto;
-  text-align: center;
-  h2 {
-  }
+  padding: 2rem;
 `
 
-const ListOfDogs = styled.ul`
+const ListOfDogs = styled.div`
   display: flex;
   flex-wrap: wrap;
-  max-width: 1000px;
-  margin: 4rem auto 0 auto;
-
-  @media (min-width: 768px) {
-  }
+  margin: 0 auto;
+  justify-content: space-between;
 `
 
 const DogsContent = () => {

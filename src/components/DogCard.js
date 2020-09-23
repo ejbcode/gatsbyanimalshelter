@@ -5,60 +5,74 @@ import { css } from "@emotion/core"
 import { Link } from "gatsby"
 // https://codepen.io/mcraiganthony/pen/NxGxqm?editors=1100
 const Card = styled.div`
-  max-height: 24rem;
-  min-width: 250px;
-  width: 33%;
-  margin: 0 auto;
-`
-const ImageStyled = styled(Image)`
-  border: green dashed 2px;
-  object-fit: cover;
-  width: auto;
-  height: 23rem;
-`
+  flex: 0 1 600px;
+  background: white;
+  margin-bottom: 2rem;
+  margin: 1rem 0.25em;
+  border-radius: 2rem 2rem 0 0;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  img {
+    border: 0;
+    display: block;
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+  }
+  @media screen and (min-width: 601px) {
+    flex: 0 1 calc(50% - 1rem);
+    img {
+      height: 25rem;
+    }
+  }
 
-const Button = styled(Link)`
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: rgba(44, 62, 80, 0.85);
-  width: 100%;
-  color: #fff;
-  display: block;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  text-align: center;
+  @media screen and (min-width: 60em) {
+    flex: 0 1 calc(33% - 1rem);
+    img {
+    }
+  }
 `
+const ImageStyled = styled(Image)``
+const Picture = styled.div`
+  position: relative;
 
+  :before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 38px;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    bottom: -10px;
+    right: 0px;
+    left: 0px;
+    background-color: white;
+  }
+`
+const Content = styled.div`
+  line-height: 1;
+  padding: 1.5rem 3rem 4rem;
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+    color: palevioletred;
+  }
+`
 const DogCard = ({ dog }) => {
   const { slug, content, name, image, breed, gender } = dog
   return (
-    <Card
-      css={css`
-        border: 1px solid #e1e1e1;
-        border: red 1px solid;
-
-        margin-bottom: 1rem;
-      `}
-    >
-      <ImageStyled fluid={image.fluid} alt={name} />
-      <div
-        css={css`
-          padding: 3rem;
-          border: red 1px solid;
-        `}
-      >
-        <h3
-          css={css`
-            font-size: 3rem;
-          `}
-        >
-          {name}
-        </h3>
-        <h2>{breed}</h2>
-        <h2>{gender}</h2>
-        <Button to={slug}> know more </Button>
-      </div>
+    <Card>
+      <Link to={slug}>
+        <Picture>
+          <img src={image.fluid.srcSet} alt={name} />
+        </Picture>
+        <Content>
+          <h3>{name}</h3>
+          <p>{breed}</p>
+          <p>{gender}</p>
+        </Content>
+      </Link>
     </Card>
   )
 }

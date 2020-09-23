@@ -20,7 +20,7 @@ const Hero = styled.div`
     flex-direction: column;
   }
   .wave {
-    bottom: -1px;
+    bottom: -2px;
     position: absolute;
     width: 100%;
     height: 30%;

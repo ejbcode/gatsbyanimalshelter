@@ -7,6 +7,7 @@ const NavStyled = styled.nav`
   justify-content: center;
   align-items: center;
   padding-bottom: 1rem;
+
   @media (min-width: 768px) {
     padding-bottom: 0;
   }
@@ -24,7 +25,7 @@ const NavLink = styled(Link)`
   &:last-of-type {
   }
   &.active {
-    border-bottom: 2px solid var(--white);
+    border-bottom: 3px solid var(--primary);
   }
 `
 

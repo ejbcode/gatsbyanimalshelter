@@ -7,21 +7,21 @@ const Header = () => {
     <header
       css={css`
         background: transparent;
-        /* position: absolute; */
         width: 100%;
         z-index: 2;
         right: 0;
         left: 0;
+        margin: 0 auto;
       `}
     >
       <div
         css={css`
           max-width: 1200px;
+
           margin: 0 auto;
           display: flex;
           justify-content: space-between;
           @media (min-width: 768px) {
-            margin: 0 3rem;
           }
         `}
       >

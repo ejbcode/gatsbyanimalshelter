@@ -10,7 +10,7 @@ const TextBox = styled.div`
   width: 95%;
   margin: 0 auto;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1050px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 3rem;
