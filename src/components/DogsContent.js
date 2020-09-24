@@ -42,6 +42,7 @@ const DogsContent = () => {
 
   return (
     <div
+      id="dogs"
       css={css`
         background-color: #f4f3eb;
       `}

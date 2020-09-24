@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import Nav from "./nav"
 
@@ -25,15 +26,17 @@ const Header = () => {
           }
         `}
       >
-        <h1
-          css={css`
-            font-size: 3.5rem;
-            margin-left: 1rem;
-            color: royalblue;
-          `}
-        >
-          Paws
-        </h1>
+        <Link to="/">
+          <h1
+            css={css`
+              font-size: 3.5rem;
+              margin-left: 1rem;
+              color: royalblue;
+            `}
+          >
+            <i class="fas fa-paw"></i> Paws
+          </h1>
+        </Link>
         <Nav />
       </div>
     </header>

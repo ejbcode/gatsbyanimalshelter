@@ -65,7 +65,15 @@ const DogTemplate = props => {
   return (
     <Layout>
       <Container>
-        <h2>🖐🏼Hi, I`m {dog.name}🐕🐶</h2>
+        <h2>
+          <span role="img" aria-label="Hi">
+            🖐🏼
+          </span>
+          Hi, I`m {dog.name}
+          <span role="img" aria-label="Panda">
+            🐕🐶
+          </span>
+        </h2>
         <MainStyled>
           <div className="column">
             <Image fluid={dog.image.fluid} />

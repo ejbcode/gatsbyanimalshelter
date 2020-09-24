@@ -14,15 +14,22 @@ const SocialIcon = styled.div`
     color: whitesmoke;
     padding: 0.5rem 2rem;
     font-size: 6rem;
+    transition: 0.2s;
+  }
+
+  .fab:hover {
+    transform: translateY(-0.5rem);
   }
 `
 
 const FooterLink = styled.div`
   color: var(--white);
   text-align: center;
+  padding: 1rem;
   div {
-    padding: 1rem;
+    margin-bottom: 2rem;
   }
+
   h4 {
     color: palevioletred;
     font-weight: 700;
@@ -36,7 +43,13 @@ const FooterLink = styled.div`
 
   @media (min-width: 768px) {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    text-align: left;
+
+    div {
+      padding: 1rem;
+      flex: 1 1 400px;
+    }
   }
 `
 
@@ -59,7 +72,7 @@ const Social = () => {
   `)
   const links = data.allDatoCmsPage.nodes
   return (
-    <div>
+    <>
       <FooterLink>
         <div>
           <h4>Schedule</h4>
@@ -101,7 +114,7 @@ const Social = () => {
         <i class="fab fa-twitter-square"></i>
         <i class="fab fa-instagram"></i>
       </SocialIcon>
-    </div>
+    </>
   )
 }
 

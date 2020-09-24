@@ -78,9 +78,7 @@ const Cta = () => {
           With your help, together, we could help making a difference in the
           lives of animals.
         </p>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          Donate
-        </a>
+        <a href="https://github.com">Donate</a>
         <ImageSection>
           <img
             src="https://www.nylabone.com/-/media/images/nylabone-na/us/homepage/footer_dog.png?h=258&la=en&w=386&hash=F9CF004F37A587486BE9FE9DAD780A77F15D1B01"

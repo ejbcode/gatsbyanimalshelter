@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 import styled from "@emotion/styled"
 
 const Hero = styled.div`
@@ -135,7 +134,7 @@ const ImageHero = () => {
             <h1>
               Do you want to met your <span> best Friend</span>?
             </h1>
-            <a href="#">Know more</a>
+            <a href="#dogs">Know more</a>
           </div>
         </TextArea>
         <ImageArea>

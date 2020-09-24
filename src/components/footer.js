@@ -24,7 +24,7 @@ const Footer = ({ siteName }) => {
             font-size: 1.5rem;
             text-align: center;
             display: block;
-
+            padding: 2rem 0;
             span {
               color: orange;
             }

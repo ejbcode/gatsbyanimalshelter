@@ -1,9 +1,7 @@
 import React from "react"
-import Image from "gatsby-image"
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
 import { Link } from "gatsby"
-// https://codepen.io/mcraiganthony/pen/NxGxqm?editors=1100
+
 const Card = styled.div`
   flex: 0 1 600px;
   background: white;
@@ -32,7 +30,6 @@ const Card = styled.div`
     }
   }
 `
-const ImageStyled = styled(Image)``
 const Picture = styled.div`
   position: relative;
 
@@ -60,7 +57,7 @@ const Content = styled.div`
   }
 `
 const DogCard = ({ dog }) => {
-  const { slug, content, name, image, breed, gender } = dog
+  const { slug, name, image, breed, gender } = dog
   return (
     <Card>
       <Link to={slug}>
