@@ -5,13 +5,15 @@ import HomeContent from "../components/homeContent"
 import DogsContent from "../components/DogsContent"
 import Cta from "../components/cta"
 
-const IndexPage = () => (
-  <Layout>
-    <ImageHero />
-    <HomeContent />
-    <Cta />
-    <DogsContent />
-  </Layout>
-)
+const IndexPage = ({ data }) => {
+  return (
+    <Layout>
+      <ImageHero bg={data.bg} bg2={data.bg2} />
+      <HomeContent />
+      <Cta />
+      <DogsContent />
+    </Layout>
+  )
+}
 
 export default IndexPage

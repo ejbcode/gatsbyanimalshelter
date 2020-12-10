@@ -1,6 +1,7 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 
 const Hero = styled.div`
   background: var(--primary);
@@ -24,7 +25,7 @@ const Hero = styled.div`
     width: 100%;
     height: 30%;
     z-index: 5;
-    background-image: url("http://demo.highhay.com/landeux/img/bg-wave.png");
+    background-image: url(${props => props.bg3});
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100% 50%;
@@ -109,24 +110,35 @@ const ImageArea = styled.div`
 `
 const ImageHero = () => {
   const data = useStaticQuery(graphql`
-    {
-      file(relativePath: { eq: "hero1.png" }) {
+    query {
+      bg: file(relativePath: { eq: "bg.png" }) {
         childImageSharp {
-          fixed(fit: COVER, grayscale: false) {
-            base64
-            tracedSVG
-            aspectRatio
-            srcWebp
-            srcSetWebp
-            originalName
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      bg2: file(relativePath: { eq: "circle.png" }) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      bg3: file(relativePath: { eq: "wave.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `)
-  const img = data.file.childImageSharp.fixed.srcWebp
+  console.log(data)
+  const { bg, bg2, bg3 } = data
+  console.log(bg)
   return (
-    <Hero>
+    <Hero bg3={bg3.childImageSharp.fluid.src}>
       <div className="container">
         <TextArea>
           <div>
@@ -139,21 +151,13 @@ const ImageHero = () => {
         </TextArea>
         <ImageArea>
           <div className="div1">
-            <img
-              className="img1"
-              src="https://demo.hasthemes.com/mitech-preview/assets/images/hero/home-infotechno-main-slider-slide-01-image-01.png"
-              alt=""
-            />
+            <Img fixed={bg2.childImageSharp.fixed} />
           </div>
           <div className="div2">
-            <img
-              className="img2"
-              src="https://yanhu3vvef11e7osn1qzldyb-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/golden-retriever-PNG.png"
-              alt=""
-            />
+            <Img fixed={bg.childImageSharp.fixed} />
           </div>
         </ImageArea>
-      </div>{" "}
+      </div>
       <div className="wave"> </div>
     </Hero>
   )

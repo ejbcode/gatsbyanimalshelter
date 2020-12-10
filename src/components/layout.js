@@ -25,6 +25,8 @@ const Layout = ({ children }) => {
     <>
       <Global
         styles={css`
+
+           
           :root {
             --white: #eee;
             --primary: #16d8db;

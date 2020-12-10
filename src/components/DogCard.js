@@ -4,8 +4,9 @@ import { Link } from "gatsby"
 
 const Card = styled.div`
   flex: 0 1 600px;
-  background: white;
-  margin-bottom: 2rem;
+  
+      background: white;
+       margin-bottom: 2rem;
   margin: 1rem 0.25em;
   border-radius: 2rem 2rem 0 0;
   overflow: hidden;
